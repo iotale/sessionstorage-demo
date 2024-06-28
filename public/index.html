@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="storage">存入 sessionStorage</button>
+    <button id="change">更新 sessionStorage</button>
+    <button id="open">打开新的 tab</button>
+    <a href="./sub.html" target="_blank" rel="opener">打开新的 tab</button>
+
+    <script>
+      const $ = (id) => document.querySelector(id);
+      const storageButton = $('#storage');
+      const changeButton = $('#change');
+      const openButton = $('#open');
+      const linkButton = $('#link');
+      storageButton.onclick = () => {
+        sessionStorage.setItem('name', '张三');
+      };
+      openButton.onclick = () => {
+        window.open('./sub.html', '_blank');
+      };
+      changeButton.onclick = () => {
+        sessionStorage.setItem('name', Date.now());
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="storage">存入 sessionStorage</button>
+    <div>
+      <iframe src="./iframe1.html" frameborder="0" width="500px" height="300px"></iframe>
+      <iframe src="./iframe2.html" frameborder="0" width="500px" height="300px"></iframe>
+    </div>
+    <script>
+      const $ = (id) => document.querySelector(id);
+      const storageButton = $('#storage');
+      storageButton.onclick = () => {
+        sessionStorage.setItem('name', Date.now());
+      };
+    </script>
+  </body>
+</html>
